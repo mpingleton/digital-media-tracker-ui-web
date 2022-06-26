@@ -1,0 +1,18 @@
+div.mainlayout_nav {
+    position: fixed;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+div.mainlayout_body {
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(255, 255, 255, 1);
+}
