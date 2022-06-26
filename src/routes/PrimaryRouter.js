@@ -4,6 +4,7 @@ import {
     Routes,
     Route
 } from "react-router-dom";
+import MainLayout from "../layouts/MainLayout";
 
 class PrimaryRouter extends React.Component {
     constructor(props) { 
@@ -17,7 +18,7 @@ class PrimaryRouter extends React.Component {
         return (
             <BrowserRouter>
                 <Routes>
-                    <Route path="/media" element={<h1>Media</h1>} />
+                    <Route path="/media" element={<MainLayout />} />
                     <Route path="/" element={<h1>Home</h1>} />
                 </Routes>
             </BrowserRouter>
