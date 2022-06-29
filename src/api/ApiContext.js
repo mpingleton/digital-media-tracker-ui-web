@@ -2,6 +2,7 @@
 class ApiContext {
     constructor() {
         this.accessToken = null;
+        this.userObject = null;
     }
 
     login(username, passphrase) {
@@ -38,6 +39,26 @@ class ApiContext {
                 .then(response => response.json())
                 .then((data) => {
                     this.accessToken = null;
+                    this.userObject = null;
+                });
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+
+    self() {
+        try {
+            fetch('http://localhost:3001/api/user/self', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${this.accessToken}`
+                },
+            })
+                .then(response => response.json())
+                .then((data) => {
+                    this.userObject = data;
                 });
         }
         catch (err) {
