@@ -11,9 +11,7 @@ import Login from '../pages/Login';
 class PrimaryRouter extends React.Component {
     constructor(props) { 
         super(props);
-        this.state = {
-
-        };
+        this.state = {};
     }
 
     render() {
