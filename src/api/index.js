@@ -19,3 +19,5 @@ export function deleteAccessToken() {
     const cookies = new Cookies();
     cookies.remove('accessToken');
 }
+
+export * from './auth.js';
