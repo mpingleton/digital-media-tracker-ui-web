@@ -1,14 +1,20 @@
 import React from 'react';
 import PrimaryRouter from '../routes/PrimaryRouter';
 
+import {
+    getApiContext
+} from '../api';
+
 class AppProvider extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            apiContext: getApiContext(),
+        };
     }
 
     render() {
-        return (<PrimaryRouter />);
+        return (<PrimaryRouter apiContext={this.state.apiContext} />);
     }
 }
 

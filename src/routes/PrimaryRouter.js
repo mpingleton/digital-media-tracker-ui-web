@@ -18,8 +18,8 @@ class PrimaryRouter extends React.Component {
         return (
             <BrowserRouter>
                 <Routes>
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/" element={<Landing />} />
+                    <Route path="/login" element={<Login apiContext={this.props.apiContext} />} />
+                    <Route path="/" element={<Landing apiContext={this.props.apiContext} />} />
                 </Routes>
             </BrowserRouter>
         );
