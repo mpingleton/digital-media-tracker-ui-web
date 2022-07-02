@@ -1,6 +1,12 @@
 import React from 'react';
 import './Login.css';
 
+import {
+    getApiContext,
+    setAccessToken,
+    login,
+} from '../api';
+
 class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -9,8 +15,15 @@ class Login extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log(event.target.username.value);
-        console.log(event.target.passphrase.value);
+        //console.log(event.target.username.value);
+        //console.log(event.target.passphrase.value);
+
+        const loginCredentials = {
+            username: event.target.username.value,
+            passphrase: event.target.passphrase.value,
+        };
+
+        login(getApiContext(), loginCredentials, setAccessToken);
     }
 
     render() {
