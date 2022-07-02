@@ -8,7 +8,7 @@ const login = async (apiContext, loginCredentials, setAccessToken) => {
         body: JSON.stringify(loginCredentials),
     }).then((data) => data.json());
 
-    if (setAccessToken != undefined) {
+    if (setAccessToken !== undefined) {
         setAccessToken(res.accessToken);
     }
 
