@@ -8,22 +8,16 @@ import MainLayout from "../layouts/MainLayout";
 import Landing from '../pages/Landing';
 import Login from '../pages/Login';
 
-class PrimaryRouter extends React.Component {
-    constructor(props) { 
-        super(props);
-        this.state = {};
-    }
-
-    render() {
-        return (
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/" element={<Landing />} />
-                </Routes>
-            </BrowserRouter>
-        );
-    }
+function PrimaryRouter() {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/media" element={<MainLayout />} />
+                <Route path="/" element={<Landing />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default PrimaryRouter;
