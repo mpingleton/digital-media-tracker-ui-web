@@ -32,3 +32,53 @@ div.mainlayout_body {
     bottom: 0px;
     background-color: rgba(255, 255, 255, 1);
 }
+
+ul.mainlayout_nav_left {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    height: 50px;
+}
+
+ul.mainlayout_nav_right {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    height: 50px;
+}
+
+li.mainlayout_nav_left_item {
+    display: inline;
+}
+
+li.mainlayout_nav_right_item {
+    display: inline;
+}
+
+a.mainlayout_nav_left_item {
+    float: left;
+    color: white;
+    text-decoration: none;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+a.mainlayout_nav_right_item {
+    float: left;
+    color: white;
+    text-decoration: none;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+a.mainlayout_nav_left_item:hover {
+    background-color: rgba(0, 120, 255, 1);
+}
+
+a.mainlayout_nav_right_item:hover {
+    background-color: rgba(0, 120, 255, 1);
+}
