@@ -1,7 +1,7 @@
 import React from 'react';
 import './MainLayout.css';
 
-function MainLayout() {
+function MainLayout(props) {
     return (
         <div>
             <div className="mainlayout_nav">
@@ -27,7 +27,7 @@ function MainLayout() {
                 </div>
             </div>
             <div className="mainlayout_body">
-                <h1>Body</h1>
+                {props.element}
             </div>
         </div>
     );
