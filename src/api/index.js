@@ -21,3 +21,4 @@ export function deleteAccessToken() {
 }
 
 export * from './auth.js';
+export * from './media.js';
