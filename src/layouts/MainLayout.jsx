@@ -1,18 +1,39 @@
 import React from 'react';
 import './MainLayout.css';
 
+const navigationBarLinks = [
+    {
+        title: 'Media',
+        url: '/media',
+    },
+    {
+        title: 'About',
+        url: '/about',
+    },
+];
+
+const actionBarLinks = [
+    {
+        title: 'New',
+        url: '#',
+    },
+    {
+        title: 'Delete',
+        url: '#',
+    }
+];
+
 function MainLayout(props) {
     return (
         <div>
             <div className="mainlayout_nav">
                 <div className="mainlayout_nav_left">
                     <ul className="mainlayout_nav_left">
-                        <li className="mainlayout_nav_left_item">
-                            <a className="mainlayout_nav_left_item" href="/media">Media</a>
-                        </li>
-                        <li className="mainlayout_nav_left_item">
-                            <a className="mainlayout_nav_left_item" href="/about">About</a>
-                        </li>
+                        {navigationBarLinks.map((link) => (
+                            <li className="mainlayout_nav_left_item">
+                                <a className="mainlayout_nav_left_item" href={link.url}>{link.title}</a>
+                            </li>
+                        ))}
                     </ul>
                 </div>
                 <div className="mainlayout_nav_right">
@@ -28,12 +49,11 @@ function MainLayout(props) {
             </div>
             <div className="mainlayout_actions">
                 <ul className="mainlayout_actions">
-                    <li className="mainlayout_actions_item">
-                        <a className="mainlayout_actions_item" href="#">New</a>
-                    </li>
-                    <li className="mainlayout_actions_item">
-                        <a className="mainlayout_actions_item" href="#">Delete</a>
-                    </li>
+                    {actionBarLinks.map((link) => (
+                        <li className="mainlayout_actions_item">
+                            <a className="mainlayout_actions_item" href={link.url}>{link.title}</a>
+                        </li>
+                    ))}
                 </ul>
             </div>
             <div className="mainlayout_body">
