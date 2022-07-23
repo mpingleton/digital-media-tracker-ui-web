@@ -12,17 +12,6 @@ const navigationBarLinks = [
     },
 ];
 
-const actionBarLinks = [
-    {
-        title: 'New',
-        url: '#',
-    },
-    {
-        title: 'Delete',
-        url: '#',
-    }
-];
-
 function MainLayout(props) {
     return (
         <div>
@@ -46,15 +35,6 @@ function MainLayout(props) {
                         </li>
                     </ul>
                 </div>
-            </div>
-            <div className="mainlayout_actions">
-                <ul className="mainlayout_actions">
-                    {actionBarLinks.map((link) => (
-                        <li className="mainlayout_actions_item">
-                            <a className="mainlayout_actions_item" href={link.url}>{link.title}</a>
-                        </li>
-                    ))}
-                </ul>
             </div>
             <div className="mainlayout_body">
                 {props.element}

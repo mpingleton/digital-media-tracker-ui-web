@@ -24,18 +24,6 @@ div.mainlayout_nav_right {
     margin-bottom: 0px;
 }
 
-div.mainlayout_actions {
-    display: flex;
-    flex-direction: row;
-    position: fixed;
-    z-index: 2;
-    top: 50px;
-    left: 0px;
-    right: 0px;
-    height: 30px;
-    background-color: rgba(0, 100, 255, 1);
-}
-
 div.mainlayout_body {
     position: absolute;
     top: 80px;
@@ -59,25 +47,11 @@ ul.mainlayout_nav_right {
     height: 50px;
 }
 
-ul.mainlayout_actions {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    list-style-type: none;
-    padding: 0px;
-    height: 30px;
-}
-
 li.mainlayout_nav_left_item {
     display: inline;
 }
 
 li.mainlayout_nav_right_item {
-    display: inline;
-}
-
-li.mainlayout_actions_item {
     display: inline;
 }
 
@@ -101,24 +75,10 @@ a.mainlayout_nav_right_item {
     padding-right: 20px;
 }
 
-a.mainlayout_actions_item {
-    float: left;
-    color: white;
-    text-decoration: none;
-    height: 30px;
-    line-height: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
 a.mainlayout_nav_left_item:hover {
     background-color: rgba(0, 120, 255, 1);
 }
 
 a.mainlayout_nav_right_item:hover {
-    background-color: rgba(0, 120, 255, 1);
-}
-
-a.mainlayout_actions_item:hover {
     background-color: rgba(0, 120, 255, 1);
 }
