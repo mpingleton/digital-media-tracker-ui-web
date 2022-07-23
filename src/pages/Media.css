@@ -2,6 +2,43 @@ div.media_page {
     
 }
 
+div.buttonbar {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul.buttonbar {
+    width: fit-content;
+    list-style-type: none;
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+li.buttonbar_item {
+    display: inline;
+}
+
+a.buttonbar_item {
+    color: white;
+    text-decoration: none;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgba(100, 100, 100, 1);
+}
+
+a.buttonbar_item:hover {
+    background-color: rgba(120, 120, 120, 1);
+}
+
 table {
     margin-left: auto;
     margin-right: auto;

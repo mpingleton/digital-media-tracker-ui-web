@@ -28,6 +28,16 @@ function Media() {
 
     return (
         <div className="media_page">
+            <div className="buttonbar">
+                <ul className="buttonbar">
+                    <li className="buttonbar_item">
+                        <a className="buttonbar_item" href="#">New</a>
+                    </li>
+                    <li className="buttonbar_item">
+                        <a className="buttonbar_item" href="#">New</a>
+                    </li>
+                </ul>
+            </div>
             <table>
                 <tr>
                     <th>Control Number</th>
