@@ -24,9 +24,21 @@ div.mainlayout_nav_right {
     margin-bottom: 0px;
 }
 
+div.mainlayout_actions {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    z-index: 2;
+    top: 50px;
+    left: 0px;
+    right: 0px;
+    height: 30px;
+    background-color: rgba(0, 120, 255, 1);
+}
+
 div.mainlayout_body {
     position: absolute;
-    top: 50px;
+    top: 80px;
     left: 0px;
     right: 0px;
     bottom: 0px;
@@ -47,11 +59,22 @@ ul.mainlayout_nav_right {
     height: 50px;
 }
 
+ul.mainlayout_actions {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    height: 30px;
+}
+
 li.mainlayout_nav_left_item {
     display: inline;
 }
 
 li.mainlayout_nav_right_item {
+    display: inline;
+}
+
+li.mainlayout_actions_item {
     display: inline;
 }
 
@@ -75,10 +98,24 @@ a.mainlayout_nav_right_item {
     padding-right: 20px;
 }
 
+a.mainlayout_actions_item {
+    float: left;
+    color: white;
+    text-decoration: none;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 a.mainlayout_nav_left_item:hover {
     background-color: rgba(0, 120, 255, 1);
 }
 
 a.mainlayout_nav_right_item:hover {
     background-color: rgba(0, 120, 255, 1);
+}
+
+a.mainlayout_actions_item:hover {
+    background-color: rgba(0, 140, 255, 1);
 }

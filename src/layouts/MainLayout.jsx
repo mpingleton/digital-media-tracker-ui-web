@@ -26,6 +26,16 @@ function MainLayout(props) {
                     </ul>
                 </div>
             </div>
+            <div className="mainlayout_actions">
+                <ul className="mainlayout_actions">
+                    <li className="mainlayout_actions_item">
+                        <a className="mainlayout_actions_item" href="#">New</a>
+                    </li>
+                    <li className="mainlayout_actions_item">
+                        <a className="mainlayout_actions_item" href="#">Delete</a>
+                    </li>
+                </ul>
+            </div>
             <div className="mainlayout_body">
                 {props.element}
             </div>
