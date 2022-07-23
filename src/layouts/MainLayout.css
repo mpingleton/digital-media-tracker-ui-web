@@ -7,7 +7,7 @@ div.mainlayout_nav {
     left: 0px;
     right: 0px;
     height: 50px;
-    background-color: rgba(0, 100, 255, 1);
+    background-color: rgba(0, 80, 255, 1);
 }
 
 div.mainlayout_nav_left {
@@ -33,7 +33,7 @@ div.mainlayout_actions {
     left: 0px;
     right: 0px;
     height: 30px;
-    background-color: rgba(0, 120, 255, 1);
+    background-color: rgba(0, 100, 255, 1);
 }
 
 div.mainlayout_body {
@@ -120,5 +120,5 @@ a.mainlayout_nav_right_item:hover {
 }
 
 a.mainlayout_actions_item:hover {
-    background-color: rgba(0, 140, 255, 1);
+    background-color: rgba(0, 120, 255, 1);
 }
