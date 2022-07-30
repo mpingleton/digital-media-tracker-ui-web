@@ -4,13 +4,25 @@ import './Media.css';
 import {
     getApiContext,
     getMediaInFacility,
+    getMediaInContainer,
 } from '../api';
 
 function Media() {
+    const params = new URLSearchParams(window.location.search);
     const [media, setMedia] = useState({});
 
     useEffect(() => {
-        getMediaInFacility(getApiContext(), 1).then((data) => setMedia(data));
+        const facilityId = params.get('facility');
+        const containerId = params.get('container');
+        if (facilityId === null && containerId === null) {
+            // Get all media that belongs to user.
+        }
+        else if (facilityId !== null && containerId === null) {
+            getMediaInFacility(getApiContext(), Number.parseInt(facilityId, 10)).then((data) => setMedia(data));
+        }
+        else if (facilityId === null && containerId !== null) {
+            getMediaInContainer(getApiContext(), Number.parseInt(containerId, 10)).then((data) => setMedia(data));
+        }
     }, []);
 
     var mediaList = (<tr><td>Loading...</td></tr>);
