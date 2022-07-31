@@ -3,6 +3,7 @@ import './Media.css';
 
 import {
     getApiContext,
+    getMediaInMe,
     getMediaInFacility,
     getMediaInContainer,
 } from '../api';
@@ -15,7 +16,7 @@ function Media() {
         const facilityId = params.get('facility');
         const containerId = params.get('container');
         if (facilityId === null && containerId === null) {
-            // Get all media that belongs to user.
+            getMediaInMe(getApiContext()).then((data) => setMedia(data));
         }
         else if (facilityId !== null && containerId === null) {
             getMediaInFacility(getApiContext(), Number.parseInt(facilityId, 10)).then((data) => setMedia(data));
