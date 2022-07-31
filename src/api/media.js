@@ -10,6 +10,18 @@ const getMediaById = async (apiContext, mediaId) => {
     return res;
 };
 
+const getMediaInMe = async (apiContext) => {
+    const res = await fetch(apiContext.apiAddr + '/api/media/in/me', {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${apiContext.accessToken}`,
+            'Content-Type': 'application/json',
+        },
+    }).then((data) => data.json());
+
+    return res;
+};
+
 const getMediaInContainer = async (apiContext, containerId) => {
     const res = await fetch(apiContext.apiAddr + '/api/media/in/container/' + containerId, {
         method: 'GET',
@@ -36,6 +48,7 @@ const getMediaInFacility = async (apiContext, facilityId) => {
 
 module.exports = {
     getMediaById,
+    getMediaInMe,
     getMediaInContainer,
     getMediaInFacility,
 };
