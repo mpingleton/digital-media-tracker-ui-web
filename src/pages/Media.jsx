@@ -10,25 +10,25 @@ import {
 
 function Media() {
     const params = new URLSearchParams(window.location.search);
-    const [media, setMedia] = useState({});
+    const [media, setMedia] = useState([]);
 
     useEffect(() => {
         const facilityId = params.get('facility');
         const containerId = params.get('container');
         if (facilityId === null && containerId === null) {
-            getMediaInMe(getApiContext()).then((data) => setMedia(data));
+            getMediaInMe(getApiContext()).then((data) => setMedia(data.media));
         }
         else if (facilityId !== null && containerId === null) {
-            getMediaInFacility(getApiContext(), Number.parseInt(facilityId, 10)).then((data) => setMedia(data));
+            getMediaInFacility(getApiContext(), Number.parseInt(facilityId, 10)).then((data) => setMedia(data.media));
         }
         else if (facilityId === null && containerId !== null) {
-            getMediaInContainer(getApiContext(), Number.parseInt(containerId, 10)).then((data) => setMedia(data));
+            getMediaInContainer(getApiContext(), Number.parseInt(containerId, 10)).then((data) => setMedia(data.media));
         }
     }, []);
 
     var mediaList = (<h3>Loading...</h3>);
-    if (media.media !== undefined) {
-        mediaList = media.media.map((m) => (
+    if (media.length > 0) {
+        mediaList = media.map((m) => (
             <tr>
                 <td>{m.controlNumber}</td>
                 <td>{m.title}</td>
