@@ -26,7 +26,7 @@ function Media() {
         }
     }, []);
 
-    var mediaList = (<tr><td>Loading...</td></tr>);
+    var mediaList = (<h3>Loading...</h3>);
     if (media.media !== undefined) {
         mediaList = media.media.map((m) => (
             <tr>
