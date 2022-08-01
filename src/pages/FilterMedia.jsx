@@ -20,6 +20,7 @@ function FilterMedia() {
                 <td>{f.buildingAddress}</td>
                 <td>{f.buildingNumber}</td>
                 <td>{f.roomNumber}</td>
+                <td><a href={`/media?facility=${f.id}`}>Select</a></td>
             </tr>
         ));
     }
