@@ -44,10 +44,10 @@ function Media() {
             <div className="buttonbar">
                 <ul className="buttonbar">
                     <li className="buttonbar_item">
-                        <a className="buttonbar_item" href="#">New</a>
+                        <a className="buttonbar_item" href="/media/new">New</a>
                     </li>
                     <li className="buttonbar_item">
-                        <a className="buttonbar_item" href="#">New</a>
+                        <a className="buttonbar_item" href="/media/filter">Filter</a>
                     </li>
                 </ul>
             </div>
