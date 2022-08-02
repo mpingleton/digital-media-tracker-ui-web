@@ -46,9 +46,22 @@ const getMediaInFacility = async (apiContext, facilityId) => {
     return res;
 };
 
+const createMedia = async (apiContext, mediaData) => {
+    const res = await fetch(apiContext.apiAddr + '/api/media', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(mediaData),
+    }).then((data) => data.json());
+
+    return res;
+};
+
 module.exports = {
     getMediaById,
     getMediaInMe,
     getMediaInContainer,
     getMediaInFacility,
+    createMedia,
 };
