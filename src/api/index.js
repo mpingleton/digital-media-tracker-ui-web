@@ -24,3 +24,4 @@ export * from './auth.js';
 export * from './media.js';
 export * from './facility.js';
 export * from './container.js';
+export * from './user.js';
