@@ -3,9 +3,16 @@ import React, {useEffect, useState} from 'react';
 import {
     getApiContext,
     createMedia,
+    getContainersInMe,
 } from '../api';
 
 function NewMedia() {
+    const [containers, setContainers] = useState([]);
+
+    useEffect(() => {
+        getContainersInMe(getApiContext()).then((data) => setContainers(data.containers));
+    }, []);
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -21,13 +28,14 @@ function NewMedia() {
         createMedia(getApiContext(), mediaData);
     };
 
+    var containerOptions = containers.map((c) => (<option value={c.id}>{c.description}</option>));
+
     return (
         <div className="new_media_page">
             <form className="new_media_form" onSubmit={handleSubmit}>
                 <label for="container">Container: </label><br/>
                 <select id="container" name="container">
-                    <option value="1">AA-01 (Facility Name)</option>
-                    <option value="2">AA-02 (Facility Name)</option>
+                    {containerOptions}
                 </select><br/><br/>
                 <label for="controlNumber">Control Number: </label><br/>
                 <input type="text" id="controlNumber" name="controlNumber" /><br/><br/>
