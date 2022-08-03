@@ -48,8 +48,9 @@ const getMediaInFacility = async (apiContext, facilityId) => {
 
 const createMedia = async (apiContext, mediaData) => {
     const res = await fetch(apiContext.apiAddr + '/api/media', {
-        method: 'POST',
+        method: 'PUT',
         headers: {
+            'Authorization': `Bearer ${apiContext.accessToken}`,
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(mediaData),
