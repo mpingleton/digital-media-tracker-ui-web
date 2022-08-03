@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './MainLayout.css';
+
+import {
+    getApiContext,
+    getSelf,
+} from '../api';
 
 const navigationBarLinks = [
     {
@@ -13,6 +18,12 @@ const navigationBarLinks = [
 ];
 
 function MainLayout(props) {
+    const [user, setUser] = useState({rank: '', firstName: '', lastName: ''});
+
+    useEffect(() => {
+        getSelf(getApiContext()).then((data) => setUser(data));
+    }, []);
+
     return (
         <div>
             <div className="mainlayout_nav">
@@ -28,7 +39,7 @@ function MainLayout(props) {
                 <div className="mainlayout_nav_right">
                     <ul className="mainlayout_nav_right">
                         <li className="mainlayout_nav_right_item">
-                            <a className="mainlayout_nav_right_item" href="/profile">SrA Doe, John</a>
+                            <a className="mainlayout_nav_right_item" href="/profile">{`${user.rank} ${user.lastName}, ${user.firstName}`}</a>
                         </li>
                         <li className="mainlayout_nav_right_item">
                             <a className="mainlayout_nav_right_item" href="#">Sign Out</a>
