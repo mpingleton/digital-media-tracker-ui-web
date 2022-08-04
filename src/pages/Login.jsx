@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 import {
@@ -8,6 +9,8 @@ import {
 } from '../api';
 
 function Login() {
+    let navigate = useNavigate();
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -16,7 +19,10 @@ function Login() {
             passphrase: event.target.passphrase.value,
         };
 
-        login(getApiContext(), loginCredentials, setAccessToken);
+        login(getApiContext(), loginCredentials, setAccessToken)
+            .then((data) => {
+                navigate('/media', { replace: true });
+            });
     };
 
     return (
