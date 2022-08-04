@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './MainLayout.css';
 
 import {
     getApiContext,
     getSelf,
+    logout,
 } from '../api';
 
 const navigationBarLinks = [
@@ -18,7 +20,15 @@ const navigationBarLinks = [
 ];
 
 function MainLayout(props) {
+    const navigate = useNavigate();
     const [user, setUser] = useState({rank: '', firstName: '', lastName: ''});
+
+    const handleLogout = (event) => {
+        logout(getApiContext())
+            .then((data) => {
+                navigate('/', { replace: true });
+            });
+    };
 
     useEffect(() => {
         getSelf(getApiContext()).then((data) => setUser(data));
@@ -42,7 +52,7 @@ function MainLayout(props) {
                             <a className="mainlayout_nav_right_item" href="/profile">{`${user.rank} ${user.lastName}, ${user.firstName}`}</a>
                         </li>
                         <li className="mainlayout_nav_right_item">
-                            <a className="mainlayout_nav_right_item" href="#">Sign Out</a>
+                            <a className="mainlayout_nav_right_item" href="#" onClick={handleLogout}>Sign Out</a>
                         </li>
                     </ul>
                 </div>
