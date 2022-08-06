@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import './NewMedia.css';
 
 import {
     getApiContext,
@@ -33,7 +34,7 @@ function NewMedia() {
     return (
         <div className="new_media_page">
             <form className="new_media_form" onSubmit={handleSubmit}>
-                <label for="container">Container: </label><br/>
+                <label for="container">Container: </label>
                 <select id="container" name="container">
                     {containerOptions}
                 </select><br/><br/>
@@ -41,7 +42,7 @@ function NewMedia() {
                 <input type="text" id="controlNumber" name="controlNumber" /><br/><br/>
                 <label for="title">Title: </label><br/>
                 <input type="text" id="title" name="title" /><br/><br/>
-                <label for="mediaType">Media Type: </label><br/>
+                <label for="mediaType">Media Type: </label>
                 <select id="mediaType" name="mediaType">
                     <option value="CD">CD</option>
                     <option value="DVD">DVD</option>
@@ -49,14 +50,14 @@ function NewMedia() {
                     <option value="HDD">HDD</option>
                     <option value="SSD">SSD</option>
                 </select><br/><br/>
-                <label for="classification">Classification: </label><br/>
+                <label for="classification">Classification: </label>
                 <select id="classification" name="classification">
                     <option value="UNCLASSIFIED">Unclassified</option>
                     <option value="CONFIDENTIAL">Confidential</option>
                     <option value="SECRET">Secret</option>
                     <option value="TOP_SECRET">Top Secret</option>
                 </select><br/><br/>
-                <label for="lifecycleState">Lifecycle State: </label><br/>
+                <label for="lifecycleState">Lifecycle State: </label>
                 <select id="lifecycleState" name="lifecycleState">
                     <option value="BLANK">Blank</option>
                     <option value="ACTIVE">Active</option>
