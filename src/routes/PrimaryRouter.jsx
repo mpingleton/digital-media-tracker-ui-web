@@ -7,6 +7,7 @@ import {
 import MainLayout from "../layouts/MainLayout";
 import Landing from '../pages/Landing';
 import Login from '../pages/Login';
+import Profile from '../pages/Profile';
 import Media from '../pages/Media';
 import FilterMedia from "../pages/FilterMedia";
 import NewMedia from "../pages/NewMedia";
@@ -16,6 +17,7 @@ function PrimaryRouter() {
         <BrowserRouter>
             <Routes>
                 <Route path="/login" element={<Login />} />
+                <Route path="/profile" element={<MainLayout element={<Profile />} />} />
                 <Route path="/media/new" element={<MainLayout element={<NewMedia />} />} />
                 <Route path="/media/filter" element={<MainLayout element={<FilterMedia />} />} />
                 <Route path="/media" element={<MainLayout element={<Media />} />} />
