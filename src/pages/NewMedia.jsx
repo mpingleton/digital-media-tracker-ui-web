@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import './NewMedia.css';
+import './styles/NewMedia.css';
 
 import {
     getApiContext,
