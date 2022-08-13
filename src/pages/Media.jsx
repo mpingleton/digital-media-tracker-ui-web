@@ -31,7 +31,7 @@ function Media() {
         mediaList = media.map((m) => (
             <tr>
                 <td>{m.controlNumber}</td>
-                <td>{m.title}</td>
+                <td><a href={`/media/id/${m.id}`}>{m.title}</a></td>
                 <td>{m.mediaType}</td>
                 <td>{m.classification}</td>
                 <td>{m.lifecycleState}</td>
