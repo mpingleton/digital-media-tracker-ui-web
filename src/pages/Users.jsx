@@ -9,6 +9,7 @@ function Users() {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
+        document.title="Users - Digital Media Tracker";
         getUsers(getApiContext()).then((data) => setUsers(data.users));
     }, []);
 

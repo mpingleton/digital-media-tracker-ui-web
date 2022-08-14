@@ -9,6 +9,7 @@ function FilterMedia() {
     const [facilities, setFacilities] = useState([]);
 
     useEffect(() => {
+        document.title="Filter Media - Digital Media Tracker";
         getFacilitiesInMe(getApiContext()).then((data) => setFacilities(data.facilities));
     }, []);
 

@@ -11,6 +11,7 @@ function NewMedia() {
     const [containers, setContainers] = useState([]);
 
     useEffect(() => {
+        document.title="New Media - Digital Media Tracker";
         getContainersInMe(getApiContext()).then((data) => setContainers(data.containers));
     }, []);
 

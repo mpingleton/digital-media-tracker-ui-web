@@ -11,6 +11,7 @@ function MediaProfile() {
     const [media, setMedia] = useState({});
 
     useEffect(() => {
+        document.title="Media Profile - Digital Media Tracker";
         getMediaById(getApiContext(), mediaId).then((data) => setMedia(data));
     }, []);
 

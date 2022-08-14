@@ -9,6 +9,7 @@ function Profile() {
     const [user, setUser] = useState({});
 
     useEffect(() => {
+        document.title="User Profile - Digital Media Tracker";
         getSelf(getApiContext()).then((data) => setUser(data));
     }, []);
 

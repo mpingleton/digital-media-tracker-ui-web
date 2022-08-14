@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles/Login.css';
 
@@ -10,6 +10,10 @@ import {
 
 function Login() {
     let navigate = useNavigate();
+
+    useEffect(() => {
+        document.title="Login - Digital Media Tracker";
+    }, []);
 
     const handleSubmit = (event) => {
         event.preventDefault();

@@ -13,6 +13,7 @@ function Media() {
     const [media, setMedia] = useState([]);
 
     useEffect(() => {
+        document.title="Media - Digital Media Tracker";
         const facilityId = params.get('facility');
         const containerId = params.get('container');
         if (facilityId === null && containerId === null) {

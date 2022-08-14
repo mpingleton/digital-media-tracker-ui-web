@@ -1,6 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 function Landing() {
+    useEffect(() => {
+        document.title="Digital Media Tracker";
+    }, []);
+
     return (
         <div>
             <h1>Digital Media Tracker</h1>
