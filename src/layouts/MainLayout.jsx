@@ -14,6 +14,10 @@ const navigationBarLinks = [
         url: '/media',
     },
     {
+        title: 'Containers',
+        url: '/containers',
+    },
+    {
         title: 'Users',
         url: '/users',
     },

@@ -13,6 +13,7 @@ import Media from '../pages/Media';
 import MediaProfile from '../pages/MediaProfile';
 import FilterMedia from "../pages/FilterMedia";
 import NewMedia from "../pages/NewMedia";
+import Containers from "../pages/Containers";
 
 function PrimaryRouter() {
     return (
@@ -20,6 +21,7 @@ function PrimaryRouter() {
             <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/profile" element={<MainLayout element={<Profile />} />} />
+                <Route path="/containers" element={<MainLayout element={<Containers />} />} />
                 <Route path="/users" element={<MainLayout element={<Users />} />} />
                 <Route path="/media/new" element={<MainLayout element={<NewMedia />} />} />
                 <Route path="/media/filter" element={<MainLayout element={<FilterMedia />} />} />
