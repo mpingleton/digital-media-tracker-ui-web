@@ -13,10 +13,6 @@ const navigationBarLinks = [
         title: 'Media',
         url: '/media',
     },
-    {
-        title: 'About',
-        url: '/about',
-    },
 ];
 
 function MainLayout(props) {
