@@ -25,6 +25,13 @@ function Containers() {
 
     return (
         <div className="container_page">
+            <div className="buttonbar">
+                <ul className="buttonbar">
+                    <li className="buttonbar">
+                        <a className="buttonbar_item" href="/containers/new">New Container</a>
+                    </li>
+                </ul>
+            </div>
             <table>
                 <tr>
                     <th>Description</th>
