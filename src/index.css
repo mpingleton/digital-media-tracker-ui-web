@@ -27,27 +27,6 @@ input {
     width: 100%;
 }
 
-div.buttonbar {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-ul.buttonbar {
-    width: fit-content;
-    list-style-type: none;
-    padding: 0px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-li.buttonbar_item {
-    display: inline;
-}
-
 a.buttonbar_item {
     color: white;
     text-decoration: none;
@@ -79,4 +58,22 @@ div.dialog {
 
 div.dialog a {
     float: right;
+}
+
+div.panel {
+    width: fit-content;
+    height: fit-content;
+    display: block;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    padding: 20px;
+}
+
+#media_buttonbar {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

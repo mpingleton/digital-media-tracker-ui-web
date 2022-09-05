@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import Panel from '../components/Panel';
 import NewMediaDialog from '../dialogs/NewMediaDialog';
 
 import {
@@ -53,18 +54,12 @@ function Media() {
                     setNewMediaDialogOpen(false);
                 }}
             />
-            <div className="buttonbar">
-                <ul className="buttonbar">
-                    <li className="buttonbar_item">
-                        <a className="buttonbar_item" href="#" onClick={() => {
-                            setNewMediaDialogOpen(!isNewMediaDialogOpen);
-                        }}>New Media</a>
-                    </li>
-                    <li className="buttonbar_item">
-                        <a className="buttonbar_item" href="/media/filter">Filter</a>
-                    </li>
-                </ul>
-            </div>
+            <Panel id="media_buttonbar">
+                <a className="buttonbar_item" href="#" onClick={() => {
+                    setNewMediaDialogOpen(!isNewMediaDialogOpen);
+                }}>New Media</a>
+                <a className="buttonbar_item" href="/media/filter">Filter</a>
+            </Panel>
             <table>
                 <tr>
                     <th>Control Number</th>
