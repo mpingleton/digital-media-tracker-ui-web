@@ -46,9 +46,13 @@ function Media() {
     const actionPanel = (
         <Panel id="media_actionbar">
             <div className="actionpanel">
-                <button href="#" onClick={() => {
-                    setNewMediaDialogOpen(!isNewMediaDialogOpen);
-                }}>New Media</button>
+                <button
+                    onClick={() => {
+                        setNewMediaDialogOpen(!isNewMediaDialogOpen);
+                    }}
+                >
+                    New Media
+                </button>
             </div>
         </Panel>
     );
