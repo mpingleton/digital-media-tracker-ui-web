@@ -47,7 +47,7 @@ div.dialog {
     padding: 20px;
 }
 
-div.dialog a {
+div.dialog button {
     float: right;
 }
 

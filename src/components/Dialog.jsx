@@ -4,11 +4,11 @@ function Dialog(props) {
     if (props.isOpen) {
         return (
             <div className="dialog">
-                <a href="#" onClick={() => {
+                <button href="#" onClick={() => {
                     if (props.onClose !== undefined) {
                         props.onClose();
                     }
-                }}>{'[X]'}</a>
+                }}>X</button>
                 {props.children}
             </div>
         );
