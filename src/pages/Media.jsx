@@ -14,6 +14,7 @@ function Media() {
     const params = new URLSearchParams(window.location.search);
     const [media, setMedia] = useState([]);
     const [isNewMediaDialogOpen, setNewMediaDialogOpen] = useState(false);
+    const [mediaSelection, setMediaSelection] = useState([]);
 
     useEffect(() => {
         document.title="Media - Digital Media Tracker";
@@ -30,10 +31,34 @@ function Media() {
         }
     }, []);
 
+    console.log(mediaSelection);
+
+    const toggleSelect = (id) => {
+        const filteredSelection = mediaSelection.filter((selectedId) => (id !== selectedId));
+        if (filteredSelection.length < mediaSelection.length) {
+            setMediaSelection(filteredSelection);
+            return;
+        }
+
+        const newSelection = mediaSelection.concat(id);
+        setMediaSelection(newSelection);
+    };
+
+    const isSelected = (id) => {
+        for (let i of mediaSelection) {
+            if (id === i) {
+                return true;
+            }
+        }
+
+        return false;
+    };
+
     var mediaList = (<h3>Loading...</h3>);
     if (media.length > 0) {
         mediaList = media.map((m) => (
             <tr>
+                <td><input type="checkbox" checked={isSelected(m.id)} onClick={() => toggleSelect(m.id)} /></td>
                 <td>{m.controlNumber}</td>
                 <td><a href={`/media/id/${m.id}`}>{m.title}</a></td>
                 <td>{m.mediaType}</td>
@@ -66,6 +91,7 @@ function Media() {
     const mediaTable = (
         <table>
             <tr>
+                <th>Select</th>
                 <th>Control Number</th>
                 <th>Title</th>
                 <th>Medium</th>
