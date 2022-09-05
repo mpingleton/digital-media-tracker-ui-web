@@ -11,7 +11,7 @@ function Login() {
 
     return (
         <div className="login_form">
-           <LoginDialog
+            <LoginDialog
                 isOpen={true}
                 onSuccess={() => {
                     navigate('/media', { replace: true });
