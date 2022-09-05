@@ -30,8 +30,8 @@ function NewMediaDialog(props) {
 
         createMedia(getApiContext(), mediaData)
             .then(() => {
-                if (props.onClose !== undefined) {
-                    props.onClose();
+                if (props.onSuccess !== undefined) {
+                    props.onSuccess();
                 }
             });
     };
