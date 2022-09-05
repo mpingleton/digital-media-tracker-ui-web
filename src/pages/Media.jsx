@@ -31,8 +31,6 @@ function Media() {
         }
     }, []);
 
-    console.log(mediaSelection);
-
     const toggleSelect = (id) => {
         const filteredSelection = mediaSelection.filter((selectedId) => (id !== selectedId));
         if (filteredSelection.length < mediaSelection.length) {
