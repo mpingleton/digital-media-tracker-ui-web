@@ -6,6 +6,7 @@ import ThreeComponentPage from '../layouts/ThreeComponentPage';
 import {
     getApiContext,
     getMediaInMe,
+    getFacilitiesInMe,
     getMediaInFacility,
     getMediaInContainer,
 } from '../api';
@@ -13,6 +14,7 @@ import {
 function Media() {
     const params = new URLSearchParams(window.location.search);
     const [media, setMedia] = useState([]);
+    const [facilities, setFacilities] = useState([]);
     const [isNewMediaDialogOpen, setNewMediaDialogOpen] = useState(false);
     const [mediaSelection, setMediaSelection] = useState([]);
 
@@ -20,6 +22,9 @@ function Media() {
         document.title="Media - Digital Media Tracker";
         const facilityId = params.get('facility');
         const containerId = params.get('container');
+
+        getFacilitiesInMe(getApiContext()).then((data) => setFacilities(data.facilities));
+
         if (facilityId === null && containerId === null) {
             getMediaInMe(getApiContext()).then((data) => setMedia(data.media));
         }
@@ -88,9 +93,16 @@ function Media() {
         </Panel>
     );
 
+    const filterList = facilities.map((facility) => (
+        <li><a href={`/media?facility=${facility.id}`}>{facility.description}</a></li>
+    ));
+
     const filterPanel = (
         <Panel id="media_filterpanel">
-            <p>Filters</p>
+            <ul>
+                <li><a href="/media">{'(Clear Filters)'}</a></li>
+                {filterList}
+            </ul>
         </Panel>
     );
 
