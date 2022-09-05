@@ -43,7 +43,9 @@ function Media() {
 
     return (
         <div className="media_page">
-            <NewMediaDialog isOpen={isNewMediaDialogOpen} />
+            <NewMediaDialog isOpen={isNewMediaDialogOpen} onClose={() => {
+                setNewMediaDialogOpen(false);
+            }} />
             <div className="buttonbar">
                 <ul className="buttonbar">
                     <li className="buttonbar_item">

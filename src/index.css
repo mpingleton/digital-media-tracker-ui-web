@@ -97,3 +97,7 @@ div.dialog {
     border-color: black;
     padding: 20px;
 }
+
+div.dialog a {
+    float: right;
+}

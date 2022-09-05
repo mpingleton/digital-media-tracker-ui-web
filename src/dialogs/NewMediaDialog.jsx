@@ -28,11 +28,16 @@ function NewMediaDialog(props) {
             lifecycleState: event.target.lifecycleState.value,
         };
 
-        createMedia(getApiContext(), mediaData);
+        createMedia(getApiContext(), mediaData)
+            .then(() => {
+                if (props.onClose !== undefined) {
+                    props.onClose();
+                }
+            });
     };
 
     return (
-        <Dialog isOpen={props.isOpen}>
+        <Dialog isOpen={props.isOpen} onClose={props.onClose}>
             <form className="new_media_form" onSubmit={handleSubmit}>
                 <label for="container">Container: </label>
                 <select id="container" name="container">
