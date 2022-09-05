@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from 'react';
+import Panel from '../components/Panel';
+import ThreeComponentPage from '../layouts/ThreeComponentPage';
 
 import {
     getApiContext,
@@ -7,6 +9,7 @@ import {
 
 function Containers() {
     const [containers, setContainers] = useState([]);
+    const [containerSelection, setContainerSelection] = useState([]);
 
     useEffect(() => {
         document.title="Containers - Digital Media Tracker";
@@ -17,29 +20,53 @@ function Containers() {
     if (containers.length > 0) {
         containerList = containers.map((m) => (
             <tr>
+                <td></td>
                 <td>{m.description}</td>
                 <td>{m.facilityId}</td>
             </tr>
         ));
     }
 
-    return (
-        <div className="container_page">
-            <div className="buttonbar">
-                <ul className="buttonbar">
-                    <li className="buttonbar">
-                        <a className="buttonbar_item" href="/containers/new">New Container</a>
-                    </li>
-                </ul>
+    const actionPanel = (
+        <Panel id="containers_actionbar">
+            <div className="actionpanel">
+                <button
+                    onClick={() => {
+                        
+                    }}
+                >
+                    New Container
+                </button>
+                <button
+                    onClick={() => {
+
+                    }}
+                    disabled={containerSelection.length === 0}
+                >
+                    Delete
+                </button>
             </div>
-            <table>
-                <tr>
-                    <th>Description</th>
-                    <th>Facility</th>
-                </tr>
-                {containerList}
-            </table>
-        </div>
+        </Panel>
+    );
+
+    const containerTable = (
+        <table>
+            <tr>
+                <th>Select</th>
+                <th>Description</th>
+                <th>Facility</th>
+            </tr>
+            {containerList}
+        </table>
+    );
+
+    return (
+        <ThreeComponentPage
+            leftComponent={actionPanel}
+            centerComponent={containerTable}
+            rightComponent={null}
+            dialogs={null}
+        />
     );
 }
 

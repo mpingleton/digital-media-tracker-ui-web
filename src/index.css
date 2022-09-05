@@ -78,3 +78,14 @@ div.panel {
     margin-left: auto;
     margin-right: auto;
 }
+
+#containers_actionbar {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#containers_actionbar button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
