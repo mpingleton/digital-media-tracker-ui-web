@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import Dialog from '../components/Dialog';
 
 import {
     getApiContext,
@@ -10,6 +11,7 @@ import {
 function Media() {
     const params = new URLSearchParams(window.location.search);
     const [media, setMedia] = useState([]);
+    const [isNewMediaDialogOpen, setNewMediaDialogOpen] = useState(false);
 
     useEffect(() => {
         document.title="Media - Digital Media Tracker";
@@ -41,10 +43,15 @@ function Media() {
 
     return (
         <div className="media_page">
+            <Dialog isOpen={isNewMediaDialogOpen}>
+                <h1>This is a new media dialog!</h1> 
+            </Dialog>
             <div className="buttonbar">
                 <ul className="buttonbar">
                     <li className="buttonbar_item">
-                        <a className="buttonbar_item" href="/media/new">New Media</a>
+                        <a className="buttonbar_item" href="#" onClick={() => {
+                            setNewMediaDialogOpen(!isNewMediaDialogOpen);
+                        }}>New Media</a>
                     </li>
                     <li className="buttonbar_item">
                         <a className="buttonbar_item" href="/media/filter">Filter</a>
