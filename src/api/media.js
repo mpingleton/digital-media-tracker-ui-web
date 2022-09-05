@@ -54,7 +54,7 @@ const createMedia = async (apiContext, mediaData) => {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(mediaData),
-    }).then((data) => data.json());
+    });
 
     return res;
 };
