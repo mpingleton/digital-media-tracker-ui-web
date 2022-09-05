@@ -1,0 +1,19 @@
+div.component_wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+}
+
+div.component_left {
+    width: 40%;
+}
+
+div.component_center {
+    width: 100%;
+}
+
+div.component_right {
+    width: 40%;
+}

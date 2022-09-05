@@ -3,6 +3,7 @@ body {
 }
 
 table {
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     border-color: black;
@@ -27,20 +28,10 @@ input {
     width: 100%;
 }
 
-a.buttonbar_item {
-    color: white;
-    text-decoration: none;
-    margin-right: 5px;
-    margin-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: rgba(100, 100, 100, 1);
-}
-
-a.buttonbar_item:hover {
-    background-color: rgba(120, 120, 120, 1);
+div.actionpanel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 div.dialog {
@@ -71,9 +62,8 @@ div.panel {
     padding: 20px;
 }
 
-#media_buttonbar {
+#media_actionbar {
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
