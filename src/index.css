@@ -30,18 +30,6 @@ div.login_form {
     right: 0px;
 }
 
-form.new_media_form {
-    position: relative;
-    padding: 20px;
-    width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
-}
-
 form.login_form {
     position: relative;
     padding: 20px;
@@ -107,4 +95,5 @@ div.dialog {
     border-style: solid;
     border-width: 1px;
     border-color: black;
+    padding: 20px;
 }
