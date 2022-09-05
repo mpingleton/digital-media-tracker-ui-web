@@ -68,6 +68,11 @@ div.panel {
     margin-right: auto;
 }
 
+#media_actionbar button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 #media_filterpanel {
     width: 90%;
     margin-left: auto;
