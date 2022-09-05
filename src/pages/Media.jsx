@@ -53,6 +53,12 @@ function Media() {
         </Panel>
     );
 
+    const filterPanel = (
+        <Panel id="media_filterpanel">
+            <p>Filters</p>
+        </Panel>
+    );
+
     const mediaTable = (
         <table>
             <tr>
@@ -83,7 +89,7 @@ function Media() {
         <ThreeComponentPage
             leftComponent={actionPanel}
             centerComponent={mediaTable}
-            rightComonents={null}
+            rightComponent={filterPanel}
             dialogs={[mediaDialog]}
         />
     );
