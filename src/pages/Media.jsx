@@ -76,6 +76,14 @@ function Media() {
                 >
                     New Media
                 </button>
+                <button
+                    onClick={() => {
+
+                    }}
+                    disabled={mediaSelection.length === 0}
+                >
+                    Transfer
+                </button>
             </div>
         </Panel>
     );
