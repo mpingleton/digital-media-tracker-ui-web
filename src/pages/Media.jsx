@@ -89,6 +89,22 @@ function Media() {
                 >
                     Transfer
                 </button>
+                <button
+                    onClick={() => {
+
+                    }}
+                    disabled={mediaSelection.length === 0}
+                >
+                    Dispose
+                </button>
+                <button
+                    onClick={() => {
+
+                    }}
+                    disabled={mediaSelection.length === 0}
+                >
+                    Release
+                </button>
             </div>
         </Panel>
     );
