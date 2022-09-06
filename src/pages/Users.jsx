@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from 'react';
+import Panel from '../components/Panel';
+import ThreeComponentPage from '../layouts/ThreeComponentPage';
 
 import {
     getApiContext,
@@ -26,26 +28,48 @@ function Users() {
         ));
     }
 
-    return (
-        <div className="users_page">
-            <div className="buttonbar">
-                <ul className="buttonbar">
-                    <li className="buttonbar_item">
-                        <a className="buttonbar_item" href="/users/new">New User</a>
-                    </li>
-                </ul>
+    const actionPanel = (
+        <Panel id="users_actionbar">
+            <div className="actionpanel">
+                <button
+                    onClick={() => {
+                        
+                    }}
+                >
+                    New User
+                </button>
             </div>
-            <table>
-                <tr>
-                    <th>Username</th>
-                    <th>Role</th>
-                    <th>Rank</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                </tr>
-                {userList}
-            </table>
-        </div>
+        </Panel>
+    );
+
+    const filterPanel = (
+        <Panel id="users_filterpanel">
+            <ul>
+                <li><a href="/users">{'(Clear Filters)'}</a></li>
+            </ul>
+        </Panel>
+    );
+
+    const userTable = (
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Role</th>
+                <th>Rank</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+            {userList}
+        </table>
+    );
+
+    return (
+        <ThreeComponentPage
+            leftComponent={actionPanel}
+            centerComponent={userTable}
+            rightComponent={filterPanel}
+            dialogs={[]}
+        />
     );
 }
 

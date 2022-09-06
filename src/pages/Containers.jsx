@@ -49,6 +49,14 @@ function Containers() {
         </Panel>
     );
 
+    const filterPanel = (
+        <Panel id="containers_filterpanel">
+            <ul>
+                <li><a href="/containers">{'(Clear Filters)'}</a></li>
+            </ul>
+        </Panel>
+    );
+
     const containerTable = (
         <table>
             <tr>
@@ -64,7 +72,7 @@ function Containers() {
         <ThreeComponentPage
             leftComponent={actionPanel}
             centerComponent={containerTable}
-            rightComponent={null}
+            rightComponent={filterPanel}
             dialogs={null}
         />
     );
