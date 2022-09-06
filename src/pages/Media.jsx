@@ -62,8 +62,8 @@ function Media() {
         mediaList = media.map((m) => (
             <tr>
                 <td><input type="checkbox" checked={isSelected(m.id)} onClick={() => toggleSelect(m.id)} /></td>
-                <td>{m.controlNumber}</td>
-                <td><a href={`/media/id/${m.id}`}>{m.title}</a></td>
+                <td><a href={`/media/id/${m.id}`}>{m.controlNumber}</a></td>
+                <td>{m.title}</td>
                 <td>{m.mediaType}</td>
                 <td>{m.classification}</td>
                 <td>{m.lifecycleState}</td>
