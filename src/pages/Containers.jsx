@@ -70,7 +70,7 @@ function Containers() {
         </table>
     );
 
-    const newContainerDialog = (
+    const dialogNewContainer = (
         <NewContainerDialog
             isOpen={isNewContainerDialogOpen}
             onSuccess={() => {
@@ -88,7 +88,7 @@ function Containers() {
             leftComponent={actionPanel}
             centerComponent={containerTable}
             rightComponent={filterPanel}
-            dialogs={[newContainerDialog]}
+            dialogs={[dialogNewContainer]}
         />
     );
 }

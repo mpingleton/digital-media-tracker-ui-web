@@ -136,7 +136,7 @@ function Media() {
         </table>
     );
 
-    const mediaDialog = (
+    const dialogNewMedia = (
         <NewMediaDialog
             isOpen={isNewMediaDialogOpen}
             onSuccess={() => {
@@ -154,7 +154,7 @@ function Media() {
             leftComponent={actionPanel}
             centerComponent={mediaTable}
             rightComponent={filterPanel}
-            dialogs={[mediaDialog]}
+            dialogs={[dialogNewMedia]}
         />
     );
 }
