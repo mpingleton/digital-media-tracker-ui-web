@@ -22,6 +22,8 @@ function UsersProfile() {
             <p>{`Rank: ${user.rank}`}</p>
             <p>{`First Name: ${user.firstName}`}</p>
             <p>{`Last Name: ${user.lastName}`}</p>
+            <p>{`E-Mail: ${user.email}`}</p>
+            <p>{`Phone: ${user.phone}`}</p>
         </div>
     );
 }
