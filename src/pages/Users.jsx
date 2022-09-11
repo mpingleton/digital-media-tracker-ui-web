@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Panel from '../components/Panel';
+import NewUserDialog from '../dialogs/NewUserDialog';
 import ThreeComponentPage from '../layouts/ThreeComponentPage';
 
 import {
@@ -9,6 +10,7 @@ import {
 
 function Users() {
     const [users, setUsers] = useState([]);
+    const [isNewUserDialogOpen, setNewUserDialogOpen] = useState(false);
 
     useEffect(() => {
         document.title="Users - Digital Media Tracker";
@@ -33,7 +35,7 @@ function Users() {
             <div className="actionpanel">
                 <button
                     onClick={() => {
-                        
+                        setNewUserDialogOpen(!isNewUserDialogOpen);
                     }}
                 >
                     New User
@@ -63,12 +65,25 @@ function Users() {
         </table>
     );
 
+    const dialogNewUser = (
+        <NewUserDialog
+            isOpen={isNewUserDialogOpen}
+            onSuccess={() => {
+                window.location.reload();
+                setNewUserDialogOpen(false);
+            }}
+            onClose={() => {
+                setNewUserDialogOpen(false);
+            }}
+        />
+    );
+
     return (
         <ThreeComponentPage
             leftComponent={actionPanel}
             centerComponent={userTable}
             rightComponent={filterPanel}
-            dialogs={[]}
+            dialogs={[dialogNewUser]}
         />
     );
 }
