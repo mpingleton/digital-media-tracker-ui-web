@@ -21,7 +21,7 @@ function Users() {
     if (users.length > 0) {
         userList = users.map((u) => (
             <tr>
-                <td>{u.username}</td>
+                <td><a href={`/users/id/${u.userId}`}>{u.username}</a></td>
                 <td>{u.role}</td>
                 <td>{u.rank}</td>
                 <td>{u.firstName}</td>

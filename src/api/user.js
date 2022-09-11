@@ -22,6 +22,18 @@ const getSelf = async (apiContext) => {
     return res;
 };
 
+const getUserById = async (apiContext, userId) => {
+    const res = await fetch(apiContext.apiAddr + '/api/user/id/' + userId, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${apiContext.accessToken}`,
+            'Content-Type': 'application/json',
+        },
+    }).then((data) => data.json());
+
+    return res;
+};
+
 const createUser = async (apiContext, userData) => {
     const res = await fetch(apiContext.apiAddr + '/api/user', {
         method: 'PUT',
@@ -38,5 +50,6 @@ const createUser = async (apiContext, userData) => {
 module.exports = {
     getUsers,
     getSelf,
+    getUserById,
     createUser,
 };
