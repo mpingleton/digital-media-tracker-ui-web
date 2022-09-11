@@ -10,6 +10,20 @@ const getContainersInMe = async (apiContext) => {
     return res;
 };
 
+const createContainer = async (apiContext, containerData) => {
+    const res = await fetch(apiContext.apiAddr + '/api/container', {
+        method: 'PUT',
+        headers: {
+            'Authorization': `Bearer ${apiContext.accessToken}`,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(containerData),
+    });
+
+    return res;
+};
+
 module.exports = {
     getContainersInMe,
+    createContainer,
 };

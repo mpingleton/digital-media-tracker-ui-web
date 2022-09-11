@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Panel from '../components/Panel';
+import NewContainerDialog from '../dialogs/NewContainerDialog';
 import ThreeComponentPage from '../layouts/ThreeComponentPage';
 
 import {
@@ -9,6 +10,7 @@ import {
 
 function Containers() {
     const [containers, setContainers] = useState([]);
+    const [isNewContainerDialogOpen, setNewContainerDialogOpen] = useState(false);
     const [containerSelection, setContainerSelection] = useState([]);
 
     useEffect(() => {
@@ -32,7 +34,7 @@ function Containers() {
             <div className="actionpanel">
                 <button
                     onClick={() => {
-                        
+                        setNewContainerDialogOpen(!isNewContainerDialogOpen);
                     }}
                 >
                     New Container
@@ -68,12 +70,25 @@ function Containers() {
         </table>
     );
 
+    const newContainerDialog = (
+        <NewContainerDialog
+            isOpen={isNewContainerDialogOpen}
+            onSuccess={() => {
+                window.location.reload();
+                setNewContainerDialogOpen(false);
+            }}
+            onClose={() => {
+                setNewContainerDialogOpen(false);
+            }}
+        />
+    );
+
     return (
         <ThreeComponentPage
             leftComponent={actionPanel}
             centerComponent={containerTable}
             rightComponent={filterPanel}
-            dialogs={null}
+            dialogs={[newContainerDialog]}
         />
     );
 }
