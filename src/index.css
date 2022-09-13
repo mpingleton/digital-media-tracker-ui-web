@@ -112,3 +112,18 @@ div.panel {
     margin-left: auto;
     margin-right: auto;
 }
+
+#media_profile_info_panel {
+    width: 100%;
+}
+
+#media_profile_action_panel {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#media_profile_action_panel button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
